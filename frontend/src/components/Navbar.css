@@ -1,0 +1,23 @@
+.navbar {
+  border: 2px solid green;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  list-style-type: none;
+}
+
+.nav-btn {
+  background-color: #0d9488;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+
+}

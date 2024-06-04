@@ -1,0 +1,32 @@
+.add-recipe {
+  margin-top: 20px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 10%;
+  padding: 20px;
+}
+
+.box-container {
+  /* border: 3px red solid; */
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  height: 700px;
+  width: 100%;
+}
+
+.box {
+  width: 50%;
+  padding: 15px;
+}
+
+.box-save {
+  padding: 15px;
+  width: 100%;
+}
+
+.select__input {
+  box-shadow: unset !important;
+}

@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+recipeapp/src/main/resources/application.properties
+.vscode/settings.json
+recipeapp/pom.xml
+recipeapp/pom.xml
