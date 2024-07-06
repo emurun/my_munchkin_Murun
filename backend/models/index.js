@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config.json').development;
+const cc = require('../config/config.json')
+const config = process.env.RUN_TIME === "production" ? cc.production : cc.development;
 
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,

@@ -1,9 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": "admin",
-    "database": "munchkin_backend",
+    "username": "postgres",
+    "password": "",
+    "database": "munchkin_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "super_admin_murun",
+    "password": "ZW53txnRPc1qfvE0TyQZNXXx6FvAKIzf",
+    "database": "munchkin_db",
+    "host": "dpg-cq4qrldds78s73cont60-a",
+    "dialect": "postgres"
   }
 }
