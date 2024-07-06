@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react'
 import Select from 'react-select'
 
+const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
@@ -11,7 +13,7 @@ const options = [
 ]
 
 const fetchIngredients = async () => {
-  const response = await fetch("http://localhost:8080/api/ingredients/")
+  const response = await fetch(`${SERVICE_URL}/api/ingredients/`)
   const json = await response.json()
   if (response.status > 299) throw new Error(json.message);
   return json
@@ -20,7 +22,7 @@ const fetchIngredients = async () => {
 const fetchCreate = async (body) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
-  const response = await fetch("http://localhost:8080/api/recipes/", {
+  const response = await fetch(`${SERVICE_URL}/api/recipes/`, {
     headers: {
       "Content-Type": "application/json",
     },

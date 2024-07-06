@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import React from 'react'
 import Select from 'react-select'
 
+const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+
 const options = [
   { value: 1, label: '1' },
   { value: 2, label: '2' },
@@ -16,7 +18,7 @@ const options = [
 const fetchRecipe = async (id) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
-  const response = await fetch(`http://localhost:8080/api/recipes/${id}`, {
+  const response = await fetch(`${SERVICE_URL}api/recipes/${id}`, {
     headers,
     method: "GET"
   })
@@ -28,7 +30,7 @@ const fetchRecipe = async (id) => {
 const fetchComments = async (id) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
-  const response = await fetch(`http://localhost:8080/api/comments?recipe_id=${id}`, {
+  const response = await fetch(`${SERVICE_URL}api/comments?recipe_id=${id}`, {
     headers,
     method: "GET"
   })
@@ -40,7 +42,7 @@ const fetchComments = async (id) => {
 const fetchRatings = async (id) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
-  const response = await fetch(`http://localhost:8080/api/ratings?recipe_id=${id}`, {
+  const response = await fetch(`${SERVICE_URL}/api/ratings?recipe_id=${id}`, {
     headers
   })
   const json = await response.json()
@@ -51,7 +53,7 @@ const fetchRatings = async (id) => {
 const fetchAddComment = async (body) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
-  const response = await fetch(`http://localhost:8080/api/comments/`, {
+  const response = await fetch(`${SERVICE_URL}/api/comments/`, {
     headers,
     body: JSON.stringify(body),
     method: "POST"
@@ -64,7 +66,7 @@ const fetchAddComment = async (body) => {
 const fetchAddRating = async (body) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
-  const response = await fetch(`http://localhost:8080/api/ratings/`, {
+  const response = await fetch(`${SERVICE_URL}/api/ratings/`, {
     headers,
     body: JSON.stringify(body),
     method: "POST"

@@ -7,16 +7,12 @@ const recipeRoutes = require(path.join(__dirname, '..', 'routes', 'recipeRoutes'
 const userRoutes = require(path.join(__dirname, '..', 'routes', 'userRoutes'));
 const userRecipeRoutes = require(path.join(__dirname, '..', 'routes', 'userRecipeRoutes'));
 
-
-// server/server.js
-const cors = require('cors');
-
 // Correct the path to the models directory
 const db = require(path.join(__dirname, '..', 'models'));
 
 const app = express();
 const PORT = process.env.PORT || 8080
-app.use(cors());
+
 app.use(express.json());
 
 // Test the connection to the database

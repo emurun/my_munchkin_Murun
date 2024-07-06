@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Login.css"
 
+const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+
 const fetchLogin = async (body) => {
   const headers = new Headers();
   headers.append("Content-Type", "application/json")
-  const response = await fetch("http://localhost:8080/api/users/login", {
+  const response = await fetch(`${SERVICE_URL}/api/users/login`, {
     headers: {
       "Content-Type": "application/json",
     },

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import "./Table.css";
 import { MdStarBorderPurple500 } from "react-icons/md";
 
+const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+
 const fetchData = async () => {
-  const response = await fetch("http://localhost:8080/api/recipes")
+  const response = await fetch(`${SERVICE_URL}/api/recipes`)
   const json = await response.json()
   if (Array.isArray(json)) return json
   return []
