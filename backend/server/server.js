@@ -47,15 +47,14 @@ app.use('/api/usersRecipe', userRecipeRoutes);
 
 
 
-
+app.use(express.static('../../frontend/build'))
 // Define routes (example)
-app.get('/', (req, res) => {
-  res.send('Hello World!'); s
-});
+// app.get('/', (req, res) => {
+//   res.send('Hello World!');
+// });
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-
 });
 
