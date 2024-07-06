@@ -41,9 +41,7 @@ app.use('/api/recipes', recipeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/usersRecipe', userRecipeRoutes);
 
-
-
-app.use(express.static('../../frontend/build'))
+app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'build')))
 // Define routes (example)
 // app.get('/', (req, res) => {
 //   res.send('Hello World!');
