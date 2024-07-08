@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import React from 'react'
 import Select from 'react-select'
 
-const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+const SERVICE_URL = process.env.RUN_TIME === "development" ? "http://localhost:8080" : ""
 
 const options = [
   { value: 1, label: '1' },

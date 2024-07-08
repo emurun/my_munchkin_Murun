@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./Login.css"
 
-const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+const SERVICE_URL = process.env.RUN_TIME === "development" ? "http://localhost:8080" : ""
 
 const fetchLogin = async (body) => {
   const headers = new Headers();

@@ -4,7 +4,7 @@ import myImage from './image.jpg'; // Importing the image
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
-const SERVICE_URL = process.env.RUN_TIME === "production" ? "" : "http://localhost:8080"
+const SERVICE_URL = process.env.RUN_TIME === "development" ? "http://localhost:8080" : ""
 
 const fetchSignUp = async (body) => {
   const headers = new Headers();
